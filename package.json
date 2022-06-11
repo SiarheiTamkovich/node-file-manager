@@ -1,0 +1,25 @@
+{
+  "name": "file-manager",
+  "version": "1.0.0",
+  "description": "File manager node.js app",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiarheiTamkovich/node-file-manager.git"
+  },
+  "keywords": [
+    "nodejs",
+    "file-manager"
+  ],
+  "author": "Siarhei Tamkovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiarheiTamkovich/node-file-manager/issues"
+  },
+  "homepage": "https://github.com/SiarheiTamkovich/node-file-manager#readme"
+}
