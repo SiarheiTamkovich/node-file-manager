@@ -7,6 +7,7 @@ import { cat } from "../commands/cat.js";
 import { hash } from "../commands/hash.js";
 import { compress } from "../commands/compress.js";
 import { decompress } from "../commands/decompress.js";
+import { cp } from "../commands/cp.js";
 
 export const openCommand = async (command) => {
 
@@ -19,7 +20,6 @@ export const openCommand = async (command) => {
     break
     case 'cd':
       cd(command[1]);
-//      const child = childProcess.fork(path.join(__dirname, '../commands/cd-spawn.js'), command[1]);
     break
     case 'ls':
       ls();
@@ -38,6 +38,9 @@ export const openCommand = async (command) => {
     break
     case 'decompress':
       decompress(command[1], command[2]);
+    break
+    case 'cp':
+      cp(command[1], command[2]);
     break
     default:
       console.log('\x1b[31m%s','Invalid input command', '\x1b[0m')
