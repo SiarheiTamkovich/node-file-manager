@@ -5,6 +5,7 @@ import { cd } from "../commands/cd.js";
 import { ls } from "../commands/ls.js";
 import { cat } from "../commands/cat.js";
 import { hash } from "../commands/hash.js";
+import { compress } from "../commands/compress.js";
 
 export const openCommand = async (command) => {
 
@@ -30,6 +31,9 @@ export const openCommand = async (command) => {
     break
     case 'os':
       osCommand(command[1]);
+    break
+    case 'compress':
+      compress(command[1], command[2]);
     break
     default:
       console.log('\x1b[31m%s','Invalid input command', '\x1b[0m')
