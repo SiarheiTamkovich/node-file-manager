@@ -1,7 +1,7 @@
 import { openCommand } from './openCommand.js';
 import { getCurrentPath } from './params.js';
 
-export const readCommand = async (userName) => {
+export const readCommand = (userName) => {
   
   const { stdin, stdout } = process;
 
@@ -9,17 +9,15 @@ export const readCommand = async (userName) => {
     console.log('\x1b[36m%s', `\n Thank you for using File Manager, ${userName}! \n`,'\x1b[0m');
   }
 
-  const pathMessage = () => {
-    console.log('You are currently in', '\x1b[33m', getCurrentPath() , '\x1b[0m','\n');
-  }
-  pathMessage();
+  console.log('You are currently in', '\x1b[33m', getCurrentPath(), '\x1b[0m','\n');
   
   stdout.write('Enter command> ');
 
   stdin.on('data', data => {
     const command = data.toString().slice(0,-2).split(' ');
     openCommand(command);
-    pathMessage();
+    
+    console.log('You are currently in', '\x1b[33m', getCurrentPath(), '\x1b[0m','\n');
     stdout.write('Enter command> ');
   });
 
