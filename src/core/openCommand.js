@@ -2,6 +2,7 @@ import { osCommand } from "../commands/os.js";
 import { __dirname } from "./params.js";
 import { up } from '../commands/up.js';
 import { cd } from "../commands/cd.js";
+import { ls } from "../commands/ls.js";
 
 export const openCommand = async (command) => {
 
@@ -15,6 +16,9 @@ export const openCommand = async (command) => {
     case 'cd':
       cd(command[1]);
 //      const child = childProcess.fork(path.join(__dirname, '../commands/cd-spawn.js'), command[1]);
+    break
+    case 'ls':
+      ls();
     break
     case 'os':
       osCommand(command[1]);

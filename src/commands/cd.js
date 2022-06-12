@@ -17,7 +17,7 @@ export const cd = (newPath) => {
     setCurrentPath(makePath);
 //    console.log(makePath)
   } catch (err) {
-      console.log(err)
+//      console.log(err)
       console.log('\x1b[31m%s','Operation failed', '\x1b[0m');
   }
 }
