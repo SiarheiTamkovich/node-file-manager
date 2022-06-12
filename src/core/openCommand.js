@@ -3,6 +3,7 @@ import { __dirname } from "./params.js";
 import { up } from '../commands/up.js';
 import { cd } from "../commands/cd.js";
 import { ls } from "../commands/ls.js";
+import { cat } from "../commands/cat.js";
 
 export const openCommand = async (command) => {
 
@@ -19,6 +20,9 @@ export const openCommand = async (command) => {
     break
     case 'ls':
       ls();
+    break
+    case 'cat':
+      cat(command[1]);
     break
     case 'os':
       osCommand(command[1]);
