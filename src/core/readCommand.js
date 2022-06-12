@@ -1,26 +1,29 @@
-import { openCommand } from './openCommand.js'
+import { openCommand } from './openCommand.js';
+import { getCurrentPath } from './params.js';
 
 export const readCommand = async (userName) => {
-
-  const homePath = process.env.home
+  
   const { stdin, stdout } = process;
 
-  console.log('\x1b[33m%s','You are currently in', homePath, '\x1b[0m')
+  const exitMessage = () => {
+    console.log('\x1b[36m%s', `\n Thank you for using File Manager, ${userName}! \n`,'\x1b[0m');
+  }
+
+  console.log('You are currently in', '\x1b[33m', getCurrentPath() , '\x1b[0m','\n')
   stdout.write('Enter command> ');
 
   stdin.on('data', data => {
 
     const command = data.toString().slice(0,-2).split(' ');
-
     openCommand(command);
 
-    if (command === '.exit') process.exit();
-
-    console.log('\x1b[33m%s','You are currently in', homePath, '\x1b[0m')
+    console.log('You are currently in','\x1b[33m', getCurrentPath(), '\x1b[0m')
     stdout.write('Enter command> ');
   });
-  process.on('exit', () => stdout.write(`Thank you for using File Manager, ${userName}!`));
+
+  process.on('SIGINT', () => {
+    process.exit();
+  })
+
+  process.on('exit', () => exitMessage());
 };
-
-
-
