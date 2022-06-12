@@ -4,6 +4,7 @@ import { up } from '../commands/up.js';
 import { cd } from "../commands/cd.js";
 import { ls } from "../commands/ls.js";
 import { cat } from "../commands/cat.js";
+import { hash } from "../commands/hash.js";
 
 export const openCommand = async (command) => {
 
@@ -23,6 +24,9 @@ export const openCommand = async (command) => {
     break
     case 'cat':
       cat(command[1]);
+    break
+    case 'hash':
+      hash(command[1]);
     break
     case 'os':
       osCommand(command[1]);
