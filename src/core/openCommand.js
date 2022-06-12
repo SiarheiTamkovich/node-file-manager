@@ -1,10 +1,10 @@
-import { osCommand } from "./os.js";
+import { osCommand } from "../commands/os.js";
 
 export const openCommand = (command) => {
 
   switch (command[0]){
-    case 'lh':
-      console.log('refgerense-', command);
+    case 'up':
+      
     break
     case 'os':
       osCommand(command[1]);

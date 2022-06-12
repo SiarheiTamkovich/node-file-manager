@@ -1,5 +1,5 @@
-import { parseCommandArgs } from "./cli.js";
-import { readCommand } from "./readCommand.js";
+import { parseCommandArgs } from "./core/cli.js";
+import { readCommand } from "./core/readCommand.js";
 
 const userNameStr = parseCommandArgs('--username');
 export const userName = userNameStr[0].toUpperCase() + userNameStr.slice(1);
