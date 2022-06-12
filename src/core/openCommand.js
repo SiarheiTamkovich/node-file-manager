@@ -8,6 +8,7 @@ import { hash } from "../commands/hash.js";
 import { compress } from "../commands/compress.js";
 import { decompress } from "../commands/decompress.js";
 import { cp } from "../commands/cp.js";
+import { mv } from "../commands/mv.js";
 
 export const openCommand = async (command) => {
 
@@ -41,6 +42,9 @@ export const openCommand = async (command) => {
     break
     case 'cp':
       cp(command[1], command[2]);
+    break
+    case 'mv':
+      mv(command[1], command[2]);
     break
     default:
       console.log('\x1b[31m%s','Invalid input command', '\x1b[0m')
