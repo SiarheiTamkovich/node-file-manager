@@ -1,5 +1,8 @@
-import path from 'path'
+import path from 'path';
+import { getCurrentPath, setCurrentPath } from '../core/params.js'
 
-//export CURENTPATH = 'C:'
-console.log(path.resolve())
+export const up = () => {
+  setCurrentPath(path.join(getCurrentPath(), '..'));
+}
+// up();
 // node src/commands/up
